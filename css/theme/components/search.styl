@@ -1,2 +1,10 @@
 .search
-    display: none
+    .header &
+        &__input
+            @media media-min-sm
+                border-radius: 44px 0 0 44px !important
+
+        &__button
+            @media media-min-sm
+                border-radius: 0 44px 44px 0
+                background: var(--secundary)

@@ -1,0 +1,34 @@
+.products
+    margin-top: 30px
+
+    &__title
+        display: flex
+        justify-content: center
+        align-items: center
+        color: var(--primary-contrast)
+        font-size: 30px
+        font-family: font-secundary
+
+        &:before
+            margin-right: 16px
+
+        &:after
+            margin-left: 16px
+
+        &:before, &:after
+            flex: 1 1 0%
+            height: 1px
+            background: var(--primary-contrast)
+            content: ''
+
+    &__case
+        border: solid 1px var(--primary-contrast)
+
+        .price-box-parcelado
+            display: none
+
+        .btn-cart
+            margin-bottom: 10px
+            background: #7faf00
+            color: #ffffff
+            font-weight: semibold
