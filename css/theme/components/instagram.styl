@@ -1,0 +1,42 @@
+.instagram
+    &__header
+        margin: 20px 0
+
+    &__title
+        display: flex
+        flex-flow: row wrap
+        justify-content: center
+        align-items: center
+        color: var(--primary-contrast)
+        font-size: 30px
+        font-family: font-secundary
+
+        small
+            margin-left: 10px
+            font-size: 20px
+
+        &:before
+            margin-right: 16px
+
+        &:after
+            margin-left: 16px
+
+        &:before, &:after
+            flex: 1 1 0%
+            height: 1px
+            background: var(--primary-contrast)
+            content: ''
+
+    &__list
+        display: flex
+        flex-wrap: wrap
+        margin: -5px
+
+        a
+            flex: 1 1 220px
+            padding: 5px
+            min-width: 0
+
+        img
+            width: 100%
+            object-fit: cover
