@@ -12074,12 +12074,22 @@ body {
 .footer .flex .title {
   color: #fff;
 }
-@media (max-width: 568px) {
+@media (max-width: 992px) {
   .footer {
     text-align: center;
   }
+  .footer__contact,
+  .footer__about,
+  .footer__doubts,
+  .footer__account {
+    flex: 0 0 100%;
+  }
   .footer .flex {
     justify-content: center;
+  }
+  .footer .myaccount__header {
+    margin: 0 auto;
+    width: 2.75rem;
   }
 }
 
