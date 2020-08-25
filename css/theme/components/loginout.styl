@@ -1,3 +1,19 @@
 .loginout
     a
         color: var(--primary-contrast)
+
+    @media media-max-lg
+        font-size: 0
+
+        a
+            &:first-child
+                display: flex
+                justify-content: center
+                align-items: center
+                width: 44px
+                height: 44px
+
+                &:before
+                    icon('\f007')
+
+                    font-size: 20px

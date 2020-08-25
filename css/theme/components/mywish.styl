@@ -1,4 +1,6 @@
 .mywish
+    z-index: 10
+
     &__header
         .ico
             width: 19px
@@ -9,6 +11,10 @@
             background: var(--primary-contrast)
             color: white
             font-weight: bold
+
+            @media media-max-sm
+                top: 5px
+                right: 5px
 
     &__content
         display: none !important

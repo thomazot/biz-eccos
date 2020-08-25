@@ -1234,7 +1234,7 @@ $j.fn.neonTheme.custom = {
     m_search: true, // ativa o responsivo da Busca
     m_filters: true, // ativa o responsivo dos Filtros do Catálogo
     m_myaccount: true, // ativa o responsivo da Minha Conta
-    m_mycart: true, // ativa o responsivo do Meu Carrinho
+    m_mycart: false, // ativa o responsivo do Meu Carrinho
     m_parcelamento: true, // ativa o responsivo do parcelamento na página de produto
     m_frete: true, // ativa o responsivo do cálculo de frete na página do produto
     m_produto: true, // ativa o responsivo de cada bloco da página de produto
@@ -1342,6 +1342,30 @@ function scrollTop() {
     })
 }
 
+function bannerTemporizadorRender() {
+    var temporizadores = []
+    $j('.banner__item .title').each(function () {
+        if ($j(this).text().indexOf('Temporizador') !== -1) {
+            temporizadores.push($j(this).closest('.banner__item'))
+        }
+    })
+
+    temporizadores.forEach(function (item) {
+        var title = $j(item).find('.title').text()
+        var timers = []
+
+        $j('.timer .title').each(function () {
+            if ($j(this).text().indexOf(title) !== -1) {
+                timers = $j(this).closest('.timer')
+            }
+        })
+
+        $j(timers).each(function () {
+            $j(item).append(this)
+        })
+    })
+}
+
 $j(document)
     .ready(function ($) {
         // document.ready
@@ -1354,6 +1378,8 @@ $j(document)
                 $(event.target).toggleClass('on')
             }
         })
+
+        bannerTemporizadorRender()
     })
     .on('resizeStop', function (e) {
         // Safe window.resize

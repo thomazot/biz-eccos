@@ -1,0 +1,53 @@
+.timer
+    display: none
+    background: none
+    color: #000
+
+    .banner &
+        position: absolute
+        top: 40px
+        right: 20px
+        display: flex
+        margin: 0
+        padding: 0 0 20px
+        width: auto
+        width: 50%
+        border: 0
+        background: #f9f9f9
+
+        &:after
+            padding-top: 15px
+            padding-left: 10px
+            content: 'Para o fim desta oferta'
+            font-size: 14px
+
+        &__clock
+            order: -1
+
+        .timer
+            &__days, &__hours, &__minutes, &__seconds
+                display: flex
+                align-items: center
+                margin: 0
+                padding: 0
+                color: #000 !important
+                font-weight: bold !important
+                font-size: 22px
+
+                &:after
+                    position: static
+                    padding: 0 5px
+                    color: @color
+                    content: ':'
+                    font-size: 22px
+
+            &__days .timer__label
+                padding-top: 5px
+
+            &__seconds:after, &__afterhours, &__afterminutes
+                display: none
+
+            &__label
+                color: #000
+                text-transform: uppercase
+                font-size: 11px

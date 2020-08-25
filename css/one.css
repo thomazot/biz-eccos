@@ -1618,9 +1618,6 @@ form.searchautocomplete {
   background: @bg(1);
   color: @color(1);
 }
-.mywish--items .mywish__header .ico {
-  fill: @bg(1);
-}
 /* Meu Carrinho */
 .mycart {
   position: relative;
@@ -10426,19 +10423,10 @@ table .change-product-link:hover {
   .header {
     flex: 1 1 auto;
   }
-  .header-container .loginout {
-    display: none;
-  }
   .header-container .mywish__header a,
   .header-container .mycart__header a,
   .header-container .myaccount__header a {
     box-shadow: none;
-  }
-}
-/* ~768px */
-@media (max-width: 48rem) {
-  .mywish {
-    display: none;
   }
 }
 /* ~568px */
@@ -11973,6 +11961,20 @@ body {
 #banner__banner-duo {
   margin-top: 1.88rem;
 }
+#banner__banner-duo img {
+  width: 100%;
+  height: auto !important;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+#banner__banner-duo .banner__link {
+  padding: 0.63rem;
+  height: auto !important;
+}
+#banner__banner-duo:not(.banner--nojs) img.d_img {
+  position: static;
+  transform: none;
+}
 #banner__banner-linha {
   margin-top: 1.88rem;
 }
@@ -12054,6 +12056,12 @@ body {
   }
 }
 
+@media (max-width: 992px) {
+  .filters .link {
+    color: var(--primary-contrast);
+  }
+}
+
 .footer,
 .footer .std,
 .footer a {
@@ -12066,12 +12074,26 @@ body {
 .footer .flex .title {
   color: #fff;
 }
+@media (max-width: 568px) {
+  .footer {
+    text-align: center;
+  }
+  .footer .flex {
+    justify-content: center;
+  }
+}
 
 .header-container {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
   background: var(--primary);
+}
+@media (max-width: 568px) {
+  .header .mywish,
+  .header .loginout {
+    margin: 0;
+  }
 }
 
 .instagram__header {
@@ -12122,6 +12144,30 @@ body {
 .loginout a {
   color: var(--primary-contrast);
 }
+@media (max-width: 992px) {
+  .loginout {
+    font-size: 0;
+  }
+  .loginout a:first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+  .loginout a:first-child:before {
+    content: '\f007';
+    text-transform: none;
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+    font-family: 'biz_icons';
+    speak: none;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-size: 1.25rem;
+  }
+}
 
 @media (min-width: 993px) {
   .header .logo {
@@ -12154,6 +12200,9 @@ body {
   display: none !important;
 }
 
+.mywish {
+  z-index: 10;
+}
 .mywish__header .ico {
   width: 1.19rem;
   height: 1.19rem;
@@ -12163,6 +12212,12 @@ body {
   background: var(--primary-contrast);
   color: #fff;
   font-weight: 700;
+}
+@media (max-width: 568px) {
+  .mywish__header .qtd {
+    top: 0.31rem;
+    right: 0.31rem;
+  }
 }
 .mywish__content {
   display: none !important;
@@ -12217,6 +12272,68 @@ body {
   }
 }
 
+.timer {
+  display: none;
+  background: none;
+  color: #000;
+}
+.banner .timer {
+  position: absolute;
+  top: 2.5rem;
+  right: 1.25rem;
+  display: flex;
+  margin: 0;
+  padding: 0 0 1.25rem;
+  width: auto;
+  width: 50%;
+  border: 0;
+  background: #f9f9f9;
+}
+.banner .timer:after {
+  padding-top: 0.94rem;
+  padding-left: 0.63rem;
+  content: 'Para o fim desta oferta';
+  font-size: 0.88rem;
+}
+.banner .timer__clock {
+  order: -1;
+}
+.banner .timer .timer__days,
+.banner .timer .timer__hours,
+.banner .timer .timer__minutes,
+.banner .timer .timer__seconds {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  color: #000 !important;
+  font-weight: 700 !important;
+  font-size: 1.38rem;
+}
+.banner .timer .timer__days:after,
+.banner .timer .timer__hours:after,
+.banner .timer .timer__minutes:after,
+.banner .timer .timer__seconds:after {
+  position: static;
+  padding: 0 0.31rem;
+  color: #000 !important;
+  content: ':';
+  font-size: 1.38rem;
+}
+.banner .timer .timer__days .timer__label {
+  padding-top: 0.31rem;
+}
+.banner .timer .timer__seconds:after,
+.banner .timer .timer__afterhours,
+.banner .timer .timer__afterminutes {
+  display: none;
+}
+.banner .timer .timer__label {
+  color: #000;
+  text-transform: uppercase;
+  font-size: 0.69rem;
+}
+
 .top-head {
   display: flex;
   justify-content: center;
@@ -12236,4 +12353,27 @@ body {
   padding: 0.19rem;
   border: dashed 1px var(--primary);
   font-weight: 600;
+}
+
+.whatsapp {
+  position: fixed;
+  bottom: 2.5rem;
+  left: 2.5rem;
+  z-index: 100;
+}
+@media (max-width: 568px) {
+  .whatsapp {
+    bottom: 3.75rem;
+    left: 0.63rem;
+    max-width: 40px;
+  }
+}
+
+
+.prod__name h1 {
+  font-size: 1.5rem;
+}
+.frete__title > span {
+  order: -1;
+  margin-left: 0;
 }
