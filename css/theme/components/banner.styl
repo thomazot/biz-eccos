@@ -20,7 +20,40 @@
 #banner__banner-linha
     margin-top: 30px
 
+    .banner
+        &__wrapper
+            margin: -10px
+            width: auto !important
+
+        &__item
+            padding: 10px
+
 #banner__banner-footer
     margin-top: -16px
     width: 100%
     object-fit: cover
+
+#banner__regua-de-vantagens
+    --background: #b5d070
+
+    &
+        margin-top: -16px
+        margin-bottom: 16px
+        background: var(--background)
+
+    .banner__wrapper
+        container()
+
+    @media media-min-lg
+        .owl-item
+            position: relative
+
+            + .owl-item
+                &:before
+                    position: absolute
+                    top: 12px
+                    left: 0
+                    width: 1px
+                    height: 25px
+                    background: #000000
+                    content: ''
